@@ -23,21 +23,4 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-
-  <!-- 发布后自动执行 ZIP 压缩并命名为 .cipx -->
-  <Target Name="PackageCipx" AfterTargets="Publish">
-    <PropertyGroup>
-      <CipxOutputDir>$(ProjectDir)bin\Package\</CipxOutputDir>
-      <CipxFilePath>$(CipxOutputDir)$(AssemblyName)-v$(Version).cipx</CipxFilePath>
-    </PropertyGroup>
-    
-    <MakeDir Directories="$(CipxOutputDir)" />
-    <Delete Files="$(CipxFilePath)" Condition="Exists('$(CipxFilePath)')" />
-    
-    <ZipDirectory SourceDirectory="$(PublishDir)"
-                  DestinationFile="$(CipxFilePath)"
-                  Overwrite="true" />
-                  
-    <Message Importance="High" Text="[Schedule.is] 插件包已成功生成: $(CipxFilePath)" />
-  </Target>
 </Project>
