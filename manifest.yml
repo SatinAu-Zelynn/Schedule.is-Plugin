@@ -1,7 +1,7 @@
 id: schedule.is
 name: Schedule.is
 apiVersion: 2.0.0.0
-description: 为 Time.is 网页大屏提供课表与上下课倒计时同步服务
+description: 为 Time.is 网页大屏提供课表显示服务
 entranceAssembly: ScheduleIsPlugin.dll
 icon: logo.png
 author: 缎金SatinAu
